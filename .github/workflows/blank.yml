@@ -36,8 +36,9 @@ jobs:
       - name: "Mostrando variables de entorno del sistema"
         run: |
           echo "Eventos ${{ toJson(github.event) }}"
-          echo "Esto es el valor de HOME: $HOME"
-          echo "Esto es el valor de GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
-          echo "Esto es el valor de GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
-          echo "Esto es el valor de GITHUB_RUN_ID: $GITHUB_RUN_ID"
-          echo "Esto es el valor de GITHUB_SHA: $GITHUB_SHA"
+          echo "Esto es el valor de GITHUB_ACTOR: ${{ github.actor }}"
+
+      - name: "Mostrando secrets"
+        run: |
+          echo "Esto es el valor de USERNAME: ${{ env.username }}"
+          echo "Esto es el valor de PASSWORD: ${{ env.password }}"
