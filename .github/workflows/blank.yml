@@ -38,6 +38,11 @@ jobs:
           echo "Eventos ${{ toJson(github.event) }}"
           echo "Esto es el valor de GITHUB_ACTOR: ${{ github.actor }}"
 
+      - name: "Mostrando valores solo si el usuario es correcto"
+        if: github.actor == 'Nathal25'
+        run: |
+          echo "Este es el valor de USERNAME: ${{ env.username }}"
+
       - name: "Mostrando secrets"
         run: |
           echo "Esto es el valor de USERNAME: ${{ env.username }}"
